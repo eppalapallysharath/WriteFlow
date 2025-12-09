@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: NovaScript-Regular
+font link: https://fonts.google.com/specimen/Nova+Script
+font author: Wojciech Kalinowski
+font author site: http://luc.devroye.org/fonts-57186.html
+
+
+icon designer: Waldiz Production
+icon designer link: /creator/waldiz_production/
+        
+{"bg":"transparent","icon-gradient-0":"#01648B","icon-gradient-1":"#5BD0A4","font":"#000000","slogan":"#141414"}
+      

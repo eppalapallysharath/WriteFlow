@@ -9,16 +9,19 @@ import { BlogByIDPage } from "../author/BlogByIDPage";
 import { AdminHomePage } from "../admin/AdminHomePage";
 import { UsersPage } from "../admin/UsersPage";
 import { PendingBlogsList } from "../admin/PendingBlogsList";
+import { MyBlogs } from "../author/MyBlogs";
+import { MyBlog } from "../author/MyBlog";
 
 export const ProtectedRouting = ({ authUser }) => {
-  console.log(authUser);
   if (authUser.user.role === "AUTHOR") {
     return (
       <Routes>
         <Route path="/" element={<AuthorNavbar />}>
           <Route path="" element={<HomePage />} />
           <Route path="writeblog" element={<WriteBlog />} />
-          <Route path="editblog" element={<EditBlog />} />
+          <Route path="myblogs" element={<MyBlogs/>} />
+          <Route path="myblog/:id" element={<MyBlog/>} />
+          <Route path="editblog/:id" element={<EditBlog />} />
           <Route path="blog/:id" element={<BlogByIDPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>

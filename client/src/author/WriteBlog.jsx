@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import axios from "axios" 
 import { baseurl } from '../constants/constants'
-import { token } from '../constants/constants'
 import {toast} from "react-toastify"
 import { useNavigate } from 'react-router-dom'
 export const WriteBlog = () => {
   const [title, setTitle] = useState()
   const [content, setContent] = useState()
   const navigate = useNavigate()
-
+  const {token} = JSON.parse(localStorage.getItem("auth"))
   const createBlog = async() =>{
       try {
         const res = await axios.post(`${baseurl}/api/posts`, {title:title,content:content}, {headers:{Authorization:`Bearer ${token}`}})

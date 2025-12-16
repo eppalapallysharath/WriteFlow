@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { baseurl, token } from "../constants/constants";
+import { baseurl } from "../constants/constants";
 import Card from "react-bootstrap/Card"
 import Button from 'react-bootstrap/Button';
 import Overlay from 'react-bootstrap/Overlay';
@@ -16,6 +16,7 @@ export const MyBlog = () => {
   const target = useRef(null);
   const navigate = useNavigate();
   const { id } = useParams();
+   const {token} = JSON.parse(localStorage.getItem("auth"))
   function fetchMyblog() {
     setLoading(true)
     axios

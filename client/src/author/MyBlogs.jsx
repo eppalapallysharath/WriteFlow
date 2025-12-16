@@ -1,11 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { baseurl, token } from '../constants/constants'
+import { baseurl } from '../constants/constants'
 import Card from "react-bootstrap/Card"
 import { useNavigate } from 'react-router-dom'
 import Badge from 'react-bootstrap/Badge'
 export const MyBlogs = () => {
   const [data, setData] = useState([])
+  const {token} = JSON.parse(localStorage.getItem("auth"))
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate() 
   const fetchMyPosts = async() => {

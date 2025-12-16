@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { baseurl, token } from "../constants/constants";
+import { baseurl } from "../constants/constants";
 import Button from "react-bootstrap/Button";
 import { toast } from "react-toastify";
 
@@ -10,6 +10,7 @@ export const EditBlog = () => {
   const { state } = useLocation();
   const [title, setTitle] = useState(state?.title);
   const [content, setContent] = useState(state?.content);
+  const {token} = JSON.parse(localStorage.getItem("auth"))
   const navigate = useNavigate()
   function fetchMyblog() {
     axios

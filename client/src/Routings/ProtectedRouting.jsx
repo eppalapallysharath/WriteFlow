@@ -11,6 +11,7 @@ import { UsersPage } from "../admin/UsersPage";
 import { PendingBlogsList } from "../admin/PendingBlogsList";
 import { MyBlogs } from "../author/MyBlogs";
 import { MyBlog } from "../author/MyBlog";
+import { PendingBlog } from "../admin/pendingBlog";
 
 export const ProtectedRouting = ({ authUser }) => {
   if (authUser.user.role === "AUTHOR") {
@@ -35,6 +36,7 @@ export const ProtectedRouting = ({ authUser }) => {
           <Route path="" element={<AdminHomePage />} />
           <Route path="admin/users" element={<UsersPage />} />
           <Route path="admin/pendingBlogs" element={<PendingBlogsList />} />
+          <Route path="admin/pending/blog/:id" element={<PendingBlog/>} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
